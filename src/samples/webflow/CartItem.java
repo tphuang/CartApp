@@ -2,20 +2,23 @@ package samples.webflow;
 
 import java.io.Serializable;
 
+//购物车中的条目
 public class CartItem implements Serializable {
     private static final long serialVersionUID = 8388627124326126637L;
-    private Product product;
-    private int quantity;
+    private Product product;//商品
+    private int quantity;//数量
 
     public CartItem(Product product, int quantity) {
 	this.product = product;
 	this.quantity = quantity;
     }
 
+    //计算该条目的总价格
     public int getTotalPrice() {
 	return this.quantity * this.product.getPrice();
     }
 
+    //增加商品的数量
     public void increaseQuantity() {
 	this.quantity++;
     }
@@ -48,6 +51,6 @@ public class CartItem implements Serializable {
 	this.quantity = quantity;
     }
 
-    /* ʡ��getter��setter */
+    /* ʡ��getter��setter */
 
 }
